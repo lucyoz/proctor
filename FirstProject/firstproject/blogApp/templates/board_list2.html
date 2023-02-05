@@ -1,0 +1,34 @@
+{% block content %}
+<div class="row mt-5">
+  <div class="col-12">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">제목</th>
+          <th scope="col">아이디</th>
+          <th scope="col">작성일</th>
+          <th scope="col">수정일</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for board in boards %}
+        <tr onclick="location.href='/board/detail2/{{ board.id }}/'">
+          <th scope="row">{{ board.id }}</th>
+          <td>{{ board.title }}</td>
+          <td>나중에</td>
+          <td>{{ board.write_dttm }}</td>
+          <td>{{ board.update_dttm }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <button class="btn btn-primary">글쓰기</button>
+  </div>
+</div>
+{% endblock %}

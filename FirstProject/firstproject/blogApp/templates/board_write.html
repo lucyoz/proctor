@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Nova Bootstrap Template - Blog</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/Nova/assets/img/favicon.png" rel="icon">
+  <link href="/static/Nova/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/Nova/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/Nova/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Nova - v1.1.0
+  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="/static/Nova/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+
+<body class="page-blog">
+
+  {% include 'header.html' %}
+
+  {% block summernote %}
+  <link rel="stylesheet" href="/static/summernote-0.8.18-dist/summernote-lite.css" type="text/css">
+  <script src="/static/summernote-0.8.18-dist/summernote-lite.js"></script>
+  <script type="text/javascript" src="/static/summernote-0.8.18-dist/lang/summernote-ko-KR.js"></script>
+
+  <script>
+    $(document).ready(function () {
+        $('#id_content').summernote({
+            placeholder: '내용을 입력해주세요.',
+            height: 500,
+            minHeight: 500,
+            maxHeight: 500,
+            lang: 'ko-KR',
+           
+            toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'help']]
+            ]
+        });
+        $('p').css('margin-bottom','0')
+        $('.note-resizebar').css('display','none');
+    });
+</script>
+<link rel="stylesheet" href="/static/bootstrap/examples/checkbox.css" type="text/css">
+{% endblock %}
+
+{% block contents %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h4 style="font-weight: bold;">Notice</h4>
+        </div>
+    </div>
+    
+    <div class="row-mt-5">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <textarea id="summernote" name="content"></textarea>
+            {% csrf_token %}
+            <div class="card" stype="width: 100%;">
+                <div class="card-header" style="padding: 0rem 0.8rem">
+                    <div class="md-form form-group" style="margin-top: 8.5px;">
+                        <div style="padding: 0 5.5px";>
+                            {{ form.title }}
+                        </div>
+                    </div>
+                    <div>
+                        {{ form.contents }}
+                    </div>
+                </div>
+                
+            </div>
+            
+
+            <div class="text-right">
+                <button type="submit" id="write" class="btn btn-sm">작성하기</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+{% include 'footer.html' %}
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="/static/Nova/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/static/Nova/assets/vendor/aos/aos.js"></script>
+<script src="/static/Nova/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/static/Nova/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/static/Nova/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/static/Nova/assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="/static/Nova/assets/js/main.js"></script>
+
+</body>
+
+</html>
+

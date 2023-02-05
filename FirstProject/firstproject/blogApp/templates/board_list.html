@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Cheatsheet · Bootstrap v5.1</title>
+
+
+    
+
+    <!-- Bootstrap core CSS -->
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    
+    <!-- Custom styles for this template -->
+
+  </head>
+  <body class="bg-light">
+
+    <div class="bd-example">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">제목</th>
+            <th scope="col">아이디</th>
+            <th scope="col">작성일</th>
+            <th scope="col">수정일</th>
+          </tr>
+          </thead>
+          <tbody>
+            {% for board in boards %}
+            <tr onclick="location.href='/board/detail2/{{ board.id }}/'">
+                <th scope="row">{{ board.id }}</th>
+                <td>{{ board.title }}</td>
+                <td>나중에</td>
+                <td>{{ board.write_dttm }}</td>
+                <td>{{ board.update_dttm }}</td>
+            </tr>
+            {% endfor %}
+          
+          </tbody>
+        </table>
+      </div>
+
+
+    </body>
+  </html>
+
