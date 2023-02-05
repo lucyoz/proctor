@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Nova Bootstrap Template - Blog</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/static/Nova/assets/img/favicon.png" rel="icon">
+  <link href="/static/Nova/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- Vendor CSS Files -->
+  <link href="/static/Nova/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="/static/Nova/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="/static/Nova/assets/css/main.css" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: Nova - v1.1.0
+  * Template URL: https://bootstrapmade.com/nova-bootstrap-business-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="/static/Nova/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+        label{
+          font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .input-form {
+            max-width: 680px;
+
+            margin-top: 80px;
+            padding: 32px;
+
+            background: #fff;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+            -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+        }
+        .wrap1{
+            text-align:center;
+        }
+
+  </style>
+</head>
+
+<body class="page-blog">
+
+  {% include 'header.html' %}
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('/static/Nova/assets/img/portfolio-header.jpg');">
+      <div class="container position-relative d-flex flex-column align-items-center">
+
+        <h2>Board</h2>
+        <ol>
+          <li><a href="/mainpage">Home</a></li>
+          <li>Board</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+
+<link rel="stylesheet" href="/static/bootstrap/examples/checkbox.css" type="text/css">
+
+{% block contents%}
+<div class="container">
+  <div class="input-form-background row">
+    <div class="input-form col-md-12 mx-auto">
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-12">
+            <div class="wrap1">
+              <h4 style="color:#1d466c"><b>이의제기 신청</b></h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row-mt-5">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div>
+            <div>
+              <div>
+                시험 과목 : {{ form.test_name }}
+              </div>
+            </div>
+          </div>
+          <div>
+              내용: {{ form.content }}
+          </div>
+
+          <div class="card-footer" style="padding-left: 0px; margin-top:18px;">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    파일 업로드 <input name="imgfile" type="file">
+                    <!-- <small id="help" class="form-text text-muted" style="margin-bottom: -15px;">
+                        &nbsp;&nbsp;[파일 업로드]&nbsp;&nbsp;<i class="fas fa-upload"></i>&nbsp;10MB 이하의 파일만 첨부 가능합니다. 여러 파일은 압축해서 업로드해주세요.
+                    </small> -->
+                </div>
+            </div>
+        </div>
+            <br>
+            {% if edit %}
+            <button class="btn btn-primary btn-lg btn-block" type="submit" id="write" class="btn btn-sm">{{ edit }}</button>
+            {% else %}
+            <button class="btn btn-primary btn-lg btn-block" type="submit" id="write" class="btn btn-sm">작성하기</button>
+            {% endif %}
+            <input type="checkbox" id="fileChangeCheck" name="fileChange" style="display: none;">
+        </div>
+        </form>
+      </div>
+   </div>
+ </div>
+</div>
+    <footer class="my-3 text-center text-small">
+      <p class="mb-1">&copy; 2022 PROCTOR</p>
+    </footer>
+</div>
+{% endblock%}
+{% include 'footer.html' %}
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="/static/Nova/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/static/Nova/assets/vendor/aos/aos.js"></script>
+<script src="/static/Nova/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="/static/Nova/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="/static/Nova/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/static/Nova/assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="/static/Nova/assets/js/main.js"></script>
+
+</body>
+
+</html>
