@@ -1,0 +1,8 @@
+FirstProject/firstproject/blogApp/migrations/__init__.py
+FirstProject/firstproject/blogApp/migrations/0001_initial.py
+FirstProject/firstproject/blogApp/migrations/0002_notice.py
+FirstProject/firstproject/blogApp/migrations/0003_notice_update_date.py
+FirstProject/firstproject/cameraApp/detection/coco.names
+FirstProject/firstproject/cameraApp/detection/shape_predictor_68_face_landmarks.dat
+FirstProject/firstproject/cameraApp/detection/yolov3.cfg
+FirstProject/firstproject/cameraApp/detection/yolov3.weights
